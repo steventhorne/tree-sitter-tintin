@@ -1,0 +1,156 @@
+==========
+WORD BLOCK
+==========
+#command test
+---
+(source_file
+  (command
+    (command_identifier)
+    (word)))
+==========
+WORD BLOCK WITH BRACKETS
+==========
+#command {test}
+---
+(source_file
+  (command
+    (command_identifier)
+    (block
+      (string))))
+==========
+STRING BLOCK WITH BRACKETS
+==========
+#command {test more words}
+---
+(source_file
+  (command
+    (command_identifier)
+    (block
+      (string))))
+==========
+MULTILINE STRING BLOCK
+==========
+#command {
+  test
+  more words
+}
+---
+(source_file
+  (command
+    (command_identifier)
+    (block
+      (string))))
+==========
+COMMAND BLOCK
+==========
+#command {#commandtwo test}
+---
+(source_file
+  (command
+    (command_identifier)
+    (block
+      (command
+        (command_identifier)
+        (word)))))
+==========
+COMMAND BLOCK WITH BRACKETS
+==========
+#command {#commandtwo {test}}
+---
+(source_file
+  (command
+    (command_identifier)
+    (block
+      (command
+        (command_identifier)
+        (block
+          (string))))))
+==========
+MULTILINE COMMAND BLOCK
+==========
+#command {
+  #commandtwo test
+}
+---
+(source_file
+  (command
+    (command_identifier)
+    (block
+      (command
+        (command_identifier)
+        (word)))))
+==========
+MULTILINE COMMAND COMMAND BLOCK
+==========
+#command
+{
+  #commandtwo
+  {
+    #test
+  }
+}
+---
+(source_file
+  (command
+    (command_identifier)
+    (block
+      (command
+        (command_identifier)
+        (block
+          (command
+            (command_identifier)))))))
+==========
+MULTIPLE COMMAND BLOCKS
+==========
+#command test
+#commandtwo test
+---
+(source_file
+  (command
+    (command_identifier)
+    (word))
+  (command
+    (command_identifier)
+    (word)))
+==========
+COMMAND BLOCK WITH MULTIPLE LINES
+==========
+#command {
+  #commandtwo test;
+  #commandthree test
+}
+---
+(source_file
+  (command
+    (command_identifier)
+    (block
+      (command
+        (command_identifier)
+        (word))
+      (command
+        (command_identifier)
+        (word)))))
+==========
+COMMAND BLOCK WITH COMMENTS
+==========
+#command {
+  #commandtwo test;
+  #commandthree test #nop this is a comment
+}
+---
+(source_file
+  (command
+    (command_identifier)
+    (block
+      (command
+        (command_identifier)
+        (word))
+      (command
+        (command_identifier)
+        (word))
+      (command
+        (command_identifier)
+        (word)
+        (word)
+        (word)
+        (word)))))
