@@ -1,4 +1,11 @@
 #ACTION {test}
 {
-    #variable mob
+    #VARIABLE mob;
+    #VARIABLE mob
+}
+
+#nop { TODO: (@github) test }
+
+#NOP {
+    test
 }
