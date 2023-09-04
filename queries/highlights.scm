@@ -1,9 +1,5 @@
 ; Comments
-(
- (command (command_identifier)) @comment
- (#lua-match? @comment "^#[nN][oO][pP]")
- (#set! "priority" 110)
-)
+(comment) @comment
 
 ; Variables
 ; () @variable

@@ -148,8 +148,7 @@ COMMAND BLOCK WITH COMMENTS
       (command
         (command_identifier)
         (word))
-      (command
-        (command_identifier)
+      (comment
         (word)
         (word)
         (word)
