@@ -23,8 +23,17 @@
           "type": "PREC",
           "value": 1,
           "content": {
-            "type": "SYMBOL",
-            "name": "variable_declaration"
+            "type": "FIELD",
+            "name": "variable_declaration",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "variable_declaration"
+              },
+              "named": true,
+              "value": "command"
+            }
           }
         },
         {
@@ -139,17 +148,22 @@
           "value": "#"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "PATTERN",
-              "value": "[vV][aA][rR]"
-            },
-            {
-              "type": "PATTERN",
-              "value": "[vV][aA][rR][iI][aA][bB][lL][eE]"
-            }
-          ]
+          "type": "ALIAS",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[vV][aA][rR]"
+              },
+              {
+                "type": "PATTERN",
+                "value": "[vV][aA][rR][iI][aA][bB][lL][eE]"
+              }
+            ]
+          },
+          "named": true,
+          "value": "command_identifier"
         }
       ]
     },

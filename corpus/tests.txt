@@ -153,3 +153,37 @@ COMMAND BLOCK WITH COMMENTS
         (word)
         (word)
         (word)))))
+==========
+VARIABLE COMMAND
+==========
+#variable test test;
+#var test test;
+---
+(source_file
+  (command
+    (command_identifier)
+    (word)
+    (word))
+  (command
+    (command_identifier)
+    (word)
+    (word)))
+==========
+VARIABLE COMMAND WITH BRACKETS
+==========
+#variable {test} {test}
+#var {test} {test};
+---
+(source_file
+  (command
+    (command_identifier)
+    (block
+      (string))
+    (block
+      (string)))
+  (command
+    (command_identifier)
+    (block
+      (string))
+    (block
+      (string))))

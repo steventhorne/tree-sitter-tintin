@@ -2,7 +2,6 @@
 {
     #VARIABLE mob;
     #VARIABLE mob
-    #echo $mob
 }
 
 #nop { TODO(@github): test }

@@ -6,7 +6,7 @@ module.exports = grammar({
 
     _command_option: $ => choice(
       prec(1, $.comment),
-      prec(1, $.variable_declaration),
+      prec(1, field("variable_declaration", alias($.variable_declaration, $.command))),
       $.command,
     ),
 
@@ -36,10 +36,10 @@ module.exports = grammar({
 
     _variable_command: $ => seq(
       "#",
-      choice(
+      alias(choice(
         /[vV][aA][rR]/,
         /[vV][aA][rR][iI][aA][bB][lL][eE]/,
-      ),
+      ), $.command_identifier),
     ),
 
     command_identifier: _ => /[A-Za-z]+/,

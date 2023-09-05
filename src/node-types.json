@@ -2,7 +2,18 @@
   {
     "type": "block",
     "named": true,
-    "fields": {},
+    "fields": {
+      "variable_declaration": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "command",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -17,10 +28,6 @@
         },
         {
           "type": "string",
-          "named": true
-        },
-        {
-          "type": "variable_declaration",
           "named": true
         }
       ]
@@ -71,7 +78,18 @@
   {
     "type": "source_file",
     "named": true,
-    "fields": {},
+    "fields": {
+      "variable_declaration": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "command",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -82,29 +100,6 @@
         },
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "variable_declaration",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "variable_declaration",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "word",
           "named": true
         }
       ]

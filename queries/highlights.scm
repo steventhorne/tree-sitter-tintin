@@ -8,8 +8,9 @@
 (command_identifier) @function
 
 ; Parameters
-(block
-  (string) @parameter)
+(command
+  (block
+    (string) @parameter))
 (command
   (word) @parameter)
 
