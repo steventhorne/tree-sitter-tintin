@@ -1,7 +1,8 @@
 #ACTION {test}
 {
-    #VARIABLE mob 13;
-    #VARIABLE mob 14
+    #VARIABLE mob2 13;
+    #VARIABLE mob 14;
+    #echo $mob;
 }
 
 #nop { TODO(@github): test }

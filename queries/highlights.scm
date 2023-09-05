@@ -1,9 +1,6 @@
 ; Comments
 (comment) @comment
 
-; Variables
-; () @variable
-
 ; Functions
 (command_identifier) @function
 
@@ -14,4 +11,12 @@
 (command
   (word) @parameter)
 
+; Variables
+; () @variable
+variable_declaration: (command
+  name: (word) @variable)
+(variable_reference) @variable
+
 ; Punctuation
+"$" @punctuation
+"#" @punctuation
