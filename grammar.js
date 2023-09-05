@@ -64,9 +64,16 @@ module.exports = grammar({
       $._block_choice,
     ),
 
-    string: _ => /[^\s\#\}][^\}]*/,
+    string: $ => repeat1(
+      choice(
+        $._full_word,
+        $.variable_reference,
+      ),
+    ),
 
     word: _ => /[A-Za-z0-9_]+/,
+
+    _full_word: _ => /[^\s\#\{\}\$][^\s\}]*/,
 
     _semicolon: _ => ";",
   }

@@ -187,3 +187,28 @@ VARIABLE COMMAND WITH BRACKETS
       (string))
     value: (block
       (string))))
+==========
+VARIABLE COMMAND WITH REFERENCE
+==========
+#var test 31;
+#echo $test;
+#echo {hi there $test ${test} };
+---
+(source_file
+  variable_declaration: (command
+    (command_identifier)
+    name: (word)
+    value: (word))
+  (command
+    (command_identifier)
+    (variable_reference
+      (word)))
+  (command
+    (command_identifier)
+    (block
+      (string
+        (variable_reference
+          (word))
+        (variable_reference
+          (block
+            (string)))))))

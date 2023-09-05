@@ -243,12 +243,28 @@
       ]
     },
     "string": {
-      "type": "PATTERN",
-      "value": "[^\\s\\#\\}][^\\}]*"
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_full_word"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "variable_reference"
+          }
+        ]
+      }
     },
     "word": {
       "type": "PATTERN",
       "value": "[A-Za-z0-9_]+"
+    },
+    "_full_word": {
+      "type": "PATTERN",
+      "value": "[^\\s\\#\\{\\}\\$][^\\s\\}]*"
     },
     "_semicolon": {
       "type": "STRING",

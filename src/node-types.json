@@ -151,6 +151,21 @@
     }
   },
   {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "variable_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "variable_reference",
     "named": true,
     "fields": {},
@@ -183,10 +198,6 @@
   },
   {
     "type": "command_identifier",
-    "named": true
-  },
-  {
-    "type": "string",
     "named": true
   },
   {
