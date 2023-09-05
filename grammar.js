@@ -24,8 +24,8 @@ module.exports = grammar({
 
     variable_declaration: $ => seq(
       $._variable_command,
-      $._block_choice,
-      $._block_choice,
+      field("name", $._block_choice),
+      field("value", $._block_choice),
       optional($._semicolon),
     ),
 
@@ -47,6 +47,7 @@ module.exports = grammar({
     _block_choice: $ => choice(
       $.block,
       $.word,
+      $.variable_reference,
     ),
 
     block: $ => seq(
@@ -56,6 +57,11 @@ module.exports = grammar({
           $.string,
         ),
       "}"
+    ),
+
+    variable_reference: $ => seq(
+      "$",
+      $._block_choice,
     ),
 
     string: _ => /[^\s\#\}][^\}]*/,

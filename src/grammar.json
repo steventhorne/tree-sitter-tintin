@@ -106,12 +106,20 @@
           "name": "_variable_command"
         },
         {
-          "type": "SYMBOL",
-          "name": "_block_choice"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_block_choice"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "_block_choice"
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_block_choice"
+          }
         },
         {
           "type": "CHOICE",
@@ -181,6 +189,10 @@
         {
           "type": "SYMBOL",
           "name": "word"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "variable_reference"
         }
       ]
     },
@@ -214,6 +226,19 @@
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "variable_reference": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "$"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_block_choice"
         }
       ]
     },

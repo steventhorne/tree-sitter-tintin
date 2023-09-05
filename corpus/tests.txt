@@ -160,14 +160,14 @@ VARIABLE COMMAND
 #var test test;
 ---
 (source_file
-  (command
+  variable_declaration: (command
     (command_identifier)
-    (word)
-    (word))
-  (command
+    name: (word)
+    value: (word))
+  variable_declaration: (command
     (command_identifier)
-    (word)
-    (word)))
+    name: (word)
+    value: (word)))
 ==========
 VARIABLE COMMAND WITH BRACKETS
 ==========
@@ -175,15 +175,15 @@ VARIABLE COMMAND WITH BRACKETS
 #var {test} {test};
 ---
 (source_file
-  (command
+  variable_declaration: (command
     (command_identifier)
-    (block
+    name: (block
       (string))
-    (block
+    value: (block
       (string)))
-  (command
+  variable_declaration: (command
     (command_identifier)
-    (block
+    name: (block
       (string))
-    (block
+    value: (block
       (string))))
